@@ -8,7 +8,7 @@
 链接：https://leetcode-cn.com/problems/two-sum
 
 ------------
-## 代码：
+## 代码1：
 ```
 /**
 
@@ -38,8 +38,35 @@ return 0;
 }
 ```
 
+## 代码2：
+```
+int a[10000]={0};
+int i;
+for(i=0;i<numsSize;i++)
+{
+	a[nums[i]]=1;
+}
+for(i=0;i<numsSize;i++)
+{
+	if(a[target-nums[i]]==1)
+	{
+		int *a=(int*)malloc(2*sizeof(int));
+		a[0]=i;
+		for(int j=0;i<numsSize;i++)
+		{
+			if(nums[j]==target-nums[i]);
+			break;
+		}
+		a[1]=j;
+		*returnSize=2;
+		return a;	
+	}
+}
+return 0;
+
+```
 -----
-## 题解：
+## 题解1：
 >本题遇到的困难主要是将*returnSize*误认为是返回数组，事实上是返回数组的大小
 
 用暴力法ac了本题，但应该还有更好的解法
