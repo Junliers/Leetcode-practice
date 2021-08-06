@@ -50,16 +50,17 @@ for(i=0;i<numsSize;i++)
 {
 	if(a[target-nums[i]]==1)
 	{
-		int *a=(int*)malloc(2*sizeof(int));
-		a[0]=i;
-		for(int j=0;i<numsSize;i++)
+		int *b=(int*)malloc(2*sizeof(int));
+		b[0]=i;
+		int j;
+		for(j=0;i<numsSize;i++)
 		{
 			if(nums[j]==target-nums[i]);
 			break;
 		}
-		a[1]=j;
+		b[1]=j;
 		*returnSize=2;
-		return a;	
+		return b;	
 	}
 }
 return 0;
