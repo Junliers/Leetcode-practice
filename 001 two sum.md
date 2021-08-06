@@ -40,16 +40,16 @@ return 0;
 
 ## 代码2：
 ```
-int a[1000]={0};
+int a[2000]={0};
 int i,j,tem;
 for(i=0;i<numsSize;i++)
 {
-	a[nums[i]]++;
+	a[nums[i]+1000]++;
 }
 for(i=0;i<numsSize;i++)
 {
 	tem=target-nums[i];
-	if(a[tem]==1&&tem!=nums[i]||a[tem]>1)
+	if(a[tem+1000]==1&&tem!=nums[i]||a[tem+1000]>1)
 	{
 		int *b=(int*)malloc(2*sizeof(int));
 		b[0]=i;
@@ -74,3 +74,4 @@ return 0;
 
 ## 题解2：
 >思路上是用哈希算法解，但不知道哪里出了问题，一直失败
+mark一下目前遇到的问题：主要的问题开大数组直接对应的方式不能应对负数和超大数字的情况，这可以通过改变哈希算法来解决
