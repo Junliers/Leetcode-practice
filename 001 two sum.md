@@ -41,14 +41,15 @@ return 0;
 ## 代码2：
 ```
 int a[1000]={0};
-int i,j;
+int i,j,tem;
 for(i=0;i<numsSize;i++)
 {
-	a[nums[i]]=1;
+	a[nums[i]]++;
 }
 for(i=0;i<numsSize;i++)
 {
-	if(a[target-nums[i]]==1)
+	tem=target-nums[i];
+	if(a[tem]==1&&tem!=nums[i]||a[tem]>1)
 	{
 		int *b=(int*)malloc(2*sizeof(int));
 		b[0]=i;
