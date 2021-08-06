@@ -40,8 +40,8 @@ return 0;
 
 ## 代码2：
 ```
-int a[10000]={0};
-int i;
+int a[1000]={0};
+int i,j;
 for(i=0;i<numsSize;i++)
 {
 	a[nums[i]]=1;
@@ -52,10 +52,9 @@ for(i=0;i<numsSize;i++)
 	{
 		int *b=(int*)malloc(2*sizeof(int));
 		b[0]=i;
-		int j;
-		for(j=0;i<numsSize;i++)
+		for(j=i+1;j<numsSize;j++)
 		{
-			if(nums[j]==target-nums[i]);
+			if(nums[j]+nums[i]==target)
 			break;
 		}
 		b[1]=j;
@@ -71,3 +70,6 @@ return 0;
 >本题遇到的困难主要是将*returnSize*误认为是返回数组，事实上是返回数组的大小
 
 用暴力法ac了本题，但应该还有更好的解法
+
+## 题解2：
+>思路上是用哈希算法解，但不知道哪里出了问题，一直失败
