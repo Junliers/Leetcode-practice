@@ -44,20 +44,29 @@ struct ListNode *sum=NULL,*p=NULL;
 int tem,a=0;
 while(l1->next||l2->next)
 {
-	sum=malloc(sizeof(struct ListNode));
-	if(!p)p=sum;
 	tem=l1->val+l2->val;
-	sum->val=tem%10+a;
-	if(tem>10)
+	if(!p)
 	{
-		a=1;
+		sum=malloc(sizeof(struct ListNode));
+		p=sum;
+		sum->val=tem%10;
+		sum->next=NULL;
 	}
 	else
 	{
-		a=0;
+		sum->next=malloc(sizeof(struct ListNode));
+		sum->next->val=tem%10+a;
+		sum->next->next=NULL;
+		sum=sum->next;
 	}
-	sum->next=NULL;
-	sum=sum->next;
+	if(tem>10)
+		{
+			a=1;
+		}
+		else
+		{
+			a=0;
+		}
 	l1=l1->next;
 	l2=l2->next;
 }
