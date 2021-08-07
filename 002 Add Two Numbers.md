@@ -46,7 +46,7 @@ while(l1||l2)
 {
 	int n1=l1?l1->val:0;
 	int n2=l2?l2->val:0;
-	tem=n1+n2;
+	tem=n1+n2+a;
 	if(!p)
 	{
 		sum=malloc(sizeof(struct ListNode));
@@ -57,7 +57,7 @@ while(l1||l2)
 	else
 	{
 		sum->next=malloc(sizeof(struct ListNode));
-		sum->next->val=tem%10+a;
+		sum->next->val=tem%10;
 		sum->next->next=NULL;
 		sum=sum->next;
 	}
