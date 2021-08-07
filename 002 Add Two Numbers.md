@@ -82,19 +82,20 @@ else
 {
 	if(l1)
 	{
-		sum=malloc(sizeof(struct ListNode));
-		sum->val=l1->val+1;
+		sum->next=malloc(sizeof(struct ListNode));
+		sum->next->val=l1->val+1;
 		l1=l1->next;
-		sum->next=l1;
+		sum->next->next=l1;
 	}
 	if(l2)
 	{
-		sum=malloc(sizeof(struct ListNode));
-		sum->val=l2->val+1;
+		sum->next=malloc(sizeof(struct ListNode));
+		sum->next->val=l2->val+1;
 		l2=l2->next;
-		sum->next=l2;
+		sum->next->next=l2;
 	}
 }
 return p;
+
 ```
 
