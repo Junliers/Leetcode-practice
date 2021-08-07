@@ -1,3 +1,4 @@
+[[+Leetcode practice reporter]]
 # 001 两数之和
 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
 
@@ -8,7 +9,7 @@
 链接：https://leetcode-cn.com/problems/two-sum
 
 ------------
-## 代码1：
+## 代码1（T）：
 ```
 /**
 
@@ -38,7 +39,7 @@ return 0;
 }
 ```
 
-## 代码2：
+## 代码2（F）：
 ```
 int a[2000]={0};
 int i,j,tem;
