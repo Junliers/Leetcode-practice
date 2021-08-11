@@ -34,7 +34,7 @@ for(i=0;i<length-1;i++)
 			if(tail-head+1>max)
 			{
 				max=tail-head+1;
-				track=tail;
+				track=head;
 			}
 			if(s[head]!=s[tail])
 				break;
@@ -43,7 +43,7 @@ for(i=0;i<length-1;i++)
 		}
 	}
 }
-int a[max]；
+char a[max]；
 for(i=0;i<max;i++)
 {
  a[i]=s[track+i];
