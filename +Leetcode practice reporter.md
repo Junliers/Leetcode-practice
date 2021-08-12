@@ -13,3 +13,6 @@
 	- [[004 Media of two Sorted Arrays]]
 - *21.08.11*
 	- [[005 Longest palindromic substring]]
+- *21.08.12*
+	- [[006 Zigzag conversion]]
+	- [[007 Reverse Integer]]
