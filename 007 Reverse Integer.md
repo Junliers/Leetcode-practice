@@ -21,19 +21,22 @@ int reverse(int x){
 -----
 #### 代码：
 ```
-if(x==0)return 0;
-int count =1;
-int tem = x;
-while(tem/10!=0)
+int tem=x;
+int answer=0;
+while(tem!=0)
 {
-	count++;
+	if(answer>INT_MAX/10||answer<INT_MIN/10)
+	{
+		return 0;
+	}
+	answer=answer*10+tem%10;
 	tem=tem/10;
 }
-int answer=0;
-tem=0;
-for(int i=0;i<count;i++)
-{
-	answer+=(x/(10^(count-i-1))-tem*10)*10^(i);
-	tem=x/(10^(count-i-1));
-}
 return answer;
+```
+
+-----
+#### 题解：
+真没想到居然会败在这么一道简单题手上，最开始的时候只想到了递归，但这个根本不是递归而是递推。只需要每次把一个数位上的数字提取出来就可以了。
+
+嗯，顺序是先提取个位数，然后提取百位数，同时将之前提取的个位数乘以十，如此反复，直到tem=0。有一个小陷阱是这里的answer 不能溢出，所以要在answer溢出之前进行预判而不能等到已经溢出了再进行判断。
