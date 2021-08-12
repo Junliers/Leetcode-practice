@@ -28,6 +28,7 @@ char * convert(char * s, int numRows){
 #### 代码：
 ```
 int lenth=strlen(s);
+if(numRows==1)return s;
 char *a=(char *)malloc(sizeof(char)*(lenth+1));
 int i,j,k=0;
 for(i=0;i<numRows;i++)
@@ -42,5 +43,10 @@ for(i=0;i<numRows;i++)
 }
 a[k]='\0';
 return a;
-
 ```
+
+-----
+#### 题解：
+这道题主要是一道找规律的题目，面对这种逻辑上重复的题，可以将数字分组，然后自然而然会想到可以利用‘%’来进行区分。
+
+需要注意的是当numRows=1是下方除数会是0，所以需要单独处理。
