@@ -16,3 +16,5 @@
 - *21.08.12*
 	- [[006 Zigzag conversion]]
 	- [[007 Reverse Integer]]
+- *21.08.14*
+	- [[008 String to Integer(atoi)]]
