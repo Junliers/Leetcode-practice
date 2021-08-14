@@ -87,18 +87,25 @@ int nums=1;
 int answer=0;
 int i=0;
 while(s[i]==' ')i++;
+while(s[i]=='-'&&s[i]=='+')
+{
 if(s[i]=='-')
 {
 	nums=-1;
 	i++;
 }
-if(s[i]=='+')i++;
-while(s[i]>='0'&&s[i]<='9'||i<lenth)
+if(s[i]=='+')
+{
+	i++;
+	nums=1;
+}
+}
+while(s[i]>='0'&&s[i]<='9'&&i<lenth)
 {
 	if(answer>INT_MAX/10)
 	{
 		if(nums==-1)
-		return INT_MIN+1;
+		return INT_MIN;
 		return INT_MAX-1;
 	}
 	answer=answer*10+(s[i]-'0');
