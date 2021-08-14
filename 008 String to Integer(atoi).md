@@ -28,7 +28,7 @@ int myAtoi(char * s){
 }
 ```
 ----
-#### 代码：
+#### 代码1(F)：
 ```
 int a[200]={0};
 int count=0;
@@ -74,6 +74,33 @@ return INT_MAX;
 if(answer<INT_MIN)
 return INT_MIN;
 
+return answer;
+
+```
+>真没想到居然还会超出时间限制，那不按描述的算法来了
+
+-----
+#### 代码2
+```
+int lenth=strlen(s);
+int nums=1;
+int answer=0;
+int i=0;
+while(s[i]==' ')i++;
+if(s[i]=='-')
+{
+	nums=-1;
+	i++;
+}
+if(s[i]=='+')i++;
+while(s[i]>='0'&&s[i]<='9'||i<lenth)
+{
+	if(answer>INT_MAX/10)return INT_MAX;
+	if(answer<INT_MIN/10)return INT_MIN;
+	answer+=answer*10+(s[i]-'0');
+	i++;
+}
+answer=answer*nums;
 return answer;
 
 ```
