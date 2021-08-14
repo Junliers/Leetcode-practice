@@ -100,11 +100,11 @@ if(s[i]=='+')i++;
 while(s[i]>='0'&&s[i]<='9'&&i<lenth)
 {
 	nextnum=s[i]-'0';
-	if(answer>INT_MAX/10&&nextnum>7)
+	if(answer>INT_MAX/10||answer==INT_MAX/10&&nextnum>7)
 	{
 		if(nums==-1)
 		return INT_MIN;
-		return INT_MAX-1;
+		return INT_MAX;
 	}
 	answer=answer*10+nextnum;
 	i++;
