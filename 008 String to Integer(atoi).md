@@ -95,9 +95,13 @@ if(s[i]=='-')
 if(s[i]=='+')i++;
 while(s[i]>='0'&&s[i]<='9'||i<lenth)
 {
-	if(answer>INT_MAX/10)return INT_MAX;
-	if(answer<INT_MIN/10)return INT_MIN;
-	answer+=answer*10+(s[i]-'0');
+	if(answer>INT_MAX/10)
+	{
+		if(nums==-1)
+		return INT_MIN+1;
+		return INT_MAX-1;
+	}
+	answer=answer*10+(s[i]-'0');
 	i++;
 }
 answer=answer*nums;
