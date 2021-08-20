@@ -18,3 +18,6 @@
 	- [[007 Reverse Integer]]
 - *21.08.14*
 	- [[008 String to Integer(atoi)]]
+- *21.08.20*
+	- [[009 Panlindrome number]]
+	- [[010 Regular Expression Matching]]
